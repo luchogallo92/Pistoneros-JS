@@ -1,0 +1,268 @@
+
+@media (max-width: 1280px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .products {
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 25rem;
+        width: max-content;
+        gap: 20px;
+        padding-bottom: 20px;
+        overflow-x: hidden;
+        margin-top: 20px;
+    }
+}
+
+/* -----1366x768----- */
+@media (max-width: 1366px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .products {
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 25rem;
+        width: max-content;
+        gap: 20px;
+        padding-bottom: 20px;
+        overflow-x: hidden;
+        margin-top: 20px;
+    }
+}
+
+
+/* -----Tablet----- */
+@media (max-width: 992px) {
+
+    body {
+        overflow-x: hidden;
+    }
+    
+
+    .products {
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 25rem;
+        width: max-content;
+        gap: 20px;
+        padding-bottom: 20px;
+        overflow-x: hidden;
+        margin-top: 20px;
+    }
+}
+
+/* -----Celular----- */
+
+@media (max-width: 600px) {
+
+    .sliders {
+        width: 100%;
+        text-wrap:nowrap;
+
+        #slider-head-1 {
+            animation: slider-headers-1 10s linear infinite;
+        }
+    }
+
+    nav {
+        max-width: 100%;
+        overflow-x: hidden;
+        z-index: 2;
+    }
+
+    .list-container {
+        z-index: 1;
+    }
+
+
+    .cart-products {
+        height: 78%;
+        width: 90%;
+
+        .render-cart img {
+            width: 30%;
+        }
+    }
+
+    body {
+        overflow-x: hidden;
+    }
+
+   .filter-products{
+        .filter-product-category {
+            overflow-x: hidden;
+            h2 {
+                font-size: 20px;
+            } 
+        }
+    }
+    
+    /* Cards */
+    .products {
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 21rem;
+        width: max-content;
+        gap: 20px;
+        padding-bottom: 20px;
+        overflow-x: hidden;
+        margin-top: 20px;
+
+        .card-container {
+            display: flex;
+            flex-direction: column;
+            height: 21.5rem;
+            width: 12rem;
+            gap: 20px;
+            border-radius: 5px; 
+            padding: 8px;
+            overflow-x: hidden;
+        
+            img {
+                border-radius: 2px;
+                width: 100%;
+                height: 100%;
+            }
+        
+            .info-card {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 5px;
+            }
+        
+            #add-to-cart-from-card {
+                border-radius: 5px;
+                height: 2rem;
+                width: 10rem;
+                border-style: none;
+                border: 1px solid var(--button-primary);
+            }
+        
+            #add-to-cart-from-card:hover {
+                transition: 0.5s ease-in;
+                background-color: var(--button-primary);
+                border: none;
+            }
+        
+            #add-to-cart-from-card:focus {
+                transition: 0.5s ease-in;
+                background-color: var(--button-secondary);
+                border: none;
+            }
+        }
+    }
+
+        .form-contact {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        height: max-content;
+
+        .form-box {
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            width: 80%;
+        }
+        }
+
+        .callcenter {
+            flex-direction: column;
+            text-wrap: balance;
+
+            .callcenter-info {
+                display: flex;
+                gap: 10px !important; 
+                width: 2rem;
+                height: 10%;
+            }
+        }
+
+
+
+
+    .pre-footer {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        padding: 10px;
+        height: 16rem;
+        width: 100%;
+        background-color: var(--texto);
+        justify-content: space-between;
+        align-items: center;
+        overflow-y: hidden;
+    
+        .info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            background-color: #fffffe;
+            flex-direction: column;
+            width: 20%;
+            height: 80%;
+            color: var(--main-bg-color);
+            z-index: 2;
+    
+            #info-img {
+                background-color: #fffffe;
+                max-width: 1.5rem;
+                max-height: 1.5rem;
+                width: 100%;
+                height: 100%;
+            }
+    
+            h4 {
+                text-align: center;
+                font-size: 12px;
+                text-wrap:pretty;
+                color: var(--button-primary);
+                background-color: #fffffe;
+            }
+    
+            p {
+                align-items: center;
+                text-align: center;
+                background-color: #fffffe;
+                color: var(--parrafo);
+                text-wrap:stable;
+                font-size: 10px;
+                font-weight: 400;
+            }
+        }
+    }
+
+    footer {
+        background-color: var(--parrafo);
+
+        .links-footer ul,li,a {
+            font-size: 10px;
+        }
+
+        .credits {
+            text-align: center;
+            width: 100%;
+        }
+
+        .credits h4 a{
+            font-size: 10px;
+            height: max-content;
+            background-color: var(--parrafo);
+            justify-content: center;
+        }
+    }
+}
