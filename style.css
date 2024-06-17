@@ -438,6 +438,10 @@ nav {
   padding: 5px;
   height: 100%;
   font-size: 12px;
+
+  h4 {
+    color: var(--button-primary);
+  }
 }
 
 .item-handler {

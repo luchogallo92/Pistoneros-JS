@@ -31,7 +31,8 @@ const categoryContainer = document.querySelector ('.filter-products')
 //Adding to cart
 const addtocart = document.querySelector ('.add-to-cart-from-card')
 
-
+//No hay productos en el carrito
+const noHayProductos = document.getElementById ('text-undrg')
 /////////Funciones/////////
 
 // Funcion para reiniciar los checkboxes
@@ -151,6 +152,10 @@ const renderProductsInsideCart = (cartProduct) => {
 }
 
 const renderInCart = () => {
+    if (!cart.lenght) {
+        noHayProductos.classList.toggle ('hidden')
+        cartmenu.style.display = 'flex'
+    }
     const renderCartElement = document.querySelector('.render-cart');
     renderCartElement.innerHTML = cart.map(renderProductsInsideCart).join('');
 }
