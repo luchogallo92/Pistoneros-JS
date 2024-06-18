@@ -444,6 +444,10 @@ nav {
   }
 }
 
+.total-shop {
+  display: none;   
+}
+
 .item-handler {
   display: flex;
   flex-direction: row;
