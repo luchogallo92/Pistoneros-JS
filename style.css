@@ -417,7 +417,7 @@ nav {
 .cart-item {
   display: flex;
   align-items: center;
-  height: 5rem;
+  height: 6rem;
   border-radius: 5px;
   padding: 5px;
   gap: 2px;
@@ -437,9 +437,10 @@ nav {
   justify-content: center;
   padding: 5px;
   height: 100%;
-  font-size: 12px;
+  font-size: 13px;
 
   h4 {
+    height: 12px;
     color: var(--button-primary);
   }
 }

@@ -36,7 +36,6 @@ const noHayProductos = document.getElementById ('text-undrg')
 
 //Total Shop
 const totalshop = document.querySelector ('.total-shop')
-console.log (totalshop)
 
 /////////Funciones/////////
 
@@ -82,7 +81,7 @@ const templatecreator = (product) => {
             <div class="info-card">
                 <h4>${marca}</h4>
                 <span>${producto}</span>
-                <span>Precio: ${precio}</span>
+                <span>Precio: $${precio}</span>
             <button class="add-to-cart-from-card"
             data-id="${id}"
             data-marca="${marca}"
@@ -133,6 +132,7 @@ const applyFilterCategories = (e) => {
     }
     productrendering.appState.products = [0]
 }
+
 ///==================================
 ///Funciones del Cart
 ///==================================
@@ -153,7 +153,7 @@ const renderProductsInsideCart = (cartProduct) => {
         <div class="product-info">
             <h3>${marca}</h3>
             <span id="text-undrg">${producto}</span>
-            <h4>${precio}</h4>
+            <h4>$${precio}</h4>
         </div>
         <div class="item-handler">
             <button class="buttons-handlers" data-id="${id}" id="item-handler-plus">+</button>
@@ -190,6 +190,7 @@ const cartFunctions = ({ target }) => {
     }
     saveCartInLocalStorage();
     renderInCart();
+    
 }
 
 // Función para agregar unidad en el carrito
@@ -221,7 +222,7 @@ const createProductData = (dataset) => {
     return {
         id: dataset.id,
         marca: dataset.marca,
-        precio: dataset.precio,
+        precio: parseFloat(dataset.precio),
         producto: dataset.producto,
         img: dataset.img,
     };
@@ -261,20 +262,21 @@ const showTotalCart = () => {
     if (cart.length) {
         totalshop.classList.remove('hidden');
         totalshop.style.display = 'block';
-    } else {
+    } else if (!cart.length) {
         totalshop.classList.add('hidden');
     }
 }
 
 const getCartTotal = () => {
-    return cart.reduce((acc, cur) => acc + Number(cur.precio) * cur.quantity, 0);
+    if (!cart) return 0;
+    return cart.reduce((acc, cur) => acc + Number.parseInt(cur.precio) * cur.quantity, 0);
 }
 
 // Llamar actualización del carrito al inicio
 const updateCartState = () => {
     saveCartInLocalStorage();
-    renderInCart();
     showTotalCart();
+    renderInCart();
 }
 
 ///==================================
@@ -309,8 +311,8 @@ const init = () => {
 
     ///Cart
     cardsproducts.addEventListener ('click', cartFunctions)
-    document.addEventListener ('DOMContentLoaded', showTotalCart)
     document.addEventListener('DOMContentLoaded', renderInCart())
+    document.addEventListener ('DOMContentLoaded', showTotalCart())
    
 }
 

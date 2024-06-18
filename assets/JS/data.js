@@ -4,7 +4,7 @@ const products_data =
         id: 1,
         marca: "Volkswagen",
         producto: "Block de Motor",
-        precio: "$568722",
+        precio: 568722,
         categoria: "Mecanica",
         cardimg: "./assets/products/motorblock.jpg"
     },
@@ -12,7 +12,7 @@ const products_data =
         id: 2,
         marca: "Volkswagen",
         producto: "Leva de motor",
-        precio: "$432844",
+        precio: 432844,
         categoria: "Mecanica",
         cardimg: "./assets/products/levas.jpg"
     },
@@ -20,7 +20,7 @@ const products_data =
         id: 3,
         marca: "Volkswagen",
         producto: "Valvulas",
-        precio: "$35688",
+        precio: 35688,
         categoria: "Mecanica",
         cardimg: "./assets/products/valvulas.jpg"
     },
@@ -28,7 +28,7 @@ const products_data =
         id: 4,
         marca: "Volkswagen",
         producto: "Piston de cilindro",
-        precio: "$350905",
+        precio: 350905,
         categoria: "Mecanica",
         cardimg: "./assets/products/piston.jpg"
     },
@@ -36,7 +36,7 @@ const products_data =
         id: 5,
         marca: "Volkswagen",
         producto: "Juego de juntas",
-        precio: "$116012",
+        precio: 116012,
         categoria: "Mecanica",
         cardimg: "./assets/products/juntas.jpg"
     },
@@ -44,7 +44,7 @@ const products_data =
         id: 6,
         marca: "Volkswagen",
         producto: "Correa de distribución",
-        precio: "$25689",
+        precio: 25689,
         categoria: "Mecanica",
         cardimg: "./assets/products/correa.jpg"
     },
@@ -52,7 +52,7 @@ const products_data =
         id: 7,
         marca: "Volkswagen",
         producto: "Alternador",
-        precio: "$498566",
+        precio: 498566,
         categoria: "Electronica",
         cardimg: "./assets/products/alternador.jpg"
     },
@@ -60,7 +60,7 @@ const products_data =
         id: 8,
         marca: "Volkswagen",
         producto: "Bateria",
-        precio: "$154630",
+        precio: 154630,
         categoria: "Electronica",
         cardimg: "./assets/products/bateria.jpg"
     },
@@ -68,7 +68,7 @@ const products_data =
         id: 9,
         marca: "Volkswagen",
         producto: "Fusilera",
-        precio: "$236780",
+        precio: 236780,
         categoria: "Electronica",
         cardimg: "./assets/products/fusilera.jpg"
     },
@@ -76,7 +76,7 @@ const products_data =
         id: 10,
         marca: "Blaupunkt",
         producto: "Combo Stereo con Parlantes",
-        precio: "$146200",
+        precio: 146200,
         categoria: "Audio",
         cardimg: "./assets/products/Blaupunkt+stereo.jpg"
     },
@@ -84,7 +84,7 @@ const products_data =
         id: 11,
         marca: "Blaupunkt",
         producto: "Stereo",
-        precio: "$82350",
+        precio: 82350,
         categoria: "Audio",
         cardimg: "./assets/products/stereo1.jpg"
     },
@@ -92,7 +92,7 @@ const products_data =
         id: 12,
         marca: "Blaupunkt",
         producto: "Par de Parlantes",
-        precio: "$67320",
+        precio: 67320,
         categoria: "Audio",
         cardimg: "./assets/products/parlantes1.jpg"
     },
@@ -100,7 +100,7 @@ const products_data =
         id: 13,
         marca: "Mercury",
         producto: "Par de Parlantes",
-        precio: "$26980",
+        precio: 26980,
         categoria: "Audio",
         cardimg: "./assets/products/parlantes2.jpg"
     },
