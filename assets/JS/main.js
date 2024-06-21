@@ -1,4 +1,12 @@
+///==================================
+/// Seccion del Hero
+///==================================
 
+const hero = document.querySelector ('.hero')
+
+///==================================
+/// Seccion del HEADER
+///==================================
 //menu
 const menunav = document.getElementById ('menu-checkbox')
 const listnav = document.querySelector ('.list-container')
@@ -15,8 +23,15 @@ const cartmenu = document.querySelector ('.cart-products')
 const favbutton = document.getElementById ('fav-checkbox')
 const favbox = document.querySelector ('.favourite-box')
 
+///==================================
+/// seccion de FILTROS
+///==================================
 //Llamado a los filtros
 const filtercalling = document.querySelectorAll ('.filter-product-category')
+
+///==================================
+/// Seccion de CARDS y CARRITO
+///==================================
 
 //renderizado de las cards
 const cardsproducts = document.querySelector ('.products_container')
@@ -28,10 +43,16 @@ const finalmessage = document.querySelector ('.final-message')
 //categorias
 const categoryContainer = document.querySelector ('.filter-products')
 
+///Carrito////
+const renderCart = document.querySelector('.render-cart');
+const buttonBuy = document.getElementById ('button-buy')
+const buttonEmpty = document.getElementById ('button-empty')
+
 //Adding to cart
 const addtocart = document.querySelector ('.add-to-cart-from-card')
 
 //No hay productos en el carrito
+const tusProductos = document.getElementById ('your-products')
 const noHayProductos = document.getElementById ('text-undrg')
 
 //Total Shop
@@ -39,7 +60,42 @@ const totalshop = document.querySelector ('.total-shop')
 
 /////////Funciones/////////
 
-// Funcion para reiniciar los checkboxes
+///==================================
+/// Funcion para cambiar el Hero
+///==================================
+
+let intervalHero = 5000
+let imgIndex = 0
+
+const backgroundChanger = (imagen) => {
+    const { id, img } = imagen;
+    return `
+        <img src="${img}" alt="" id="${id}">
+    `;
+};
+
+const heroChange = () => {
+
+    for (let i = 0; i < hero_images.length; i++) {
+        setTimeout(() => {
+            const img = backgroundChanger(hero_images[i]);
+            hero.innerHTML = img;
+
+            setTimeout(() => {
+                hero.querySelector('img').classList.add('active');
+            }, 50);
+        }, i * intervalHero);
+    }
+
+    setTimeout(heroChange, hero_images.length * intervalHero);
+}
+
+
+
+///==================================
+/// Funcion para reiniciar los checkboxes
+///==================================
+
 const CheckboxesReset = (currentCheckbox) => {
     const checkboxes = [menunav, user, cartcheckbox, favbutton];
     checkboxes.forEach(checkbox => {
@@ -70,6 +126,8 @@ const updateDisplay = (checkbox) => {
 ///==================================
 ///Funciones de renderizado de cards
 ///==================================
+
+
 //Creator template
 const templatecreator = (product) => {
     const { id, marca, producto, precio, cardimg } = product;
@@ -88,8 +146,8 @@ const templatecreator = (product) => {
             data-producto="${producto}"
             data-precio="${precio}"
             data-img="${cardimg}">Agregar al carrito
-            <!--<box-icon name='bookmark'color='#ffffff' class="save-user"></box-icon> 
-            <box-icon name='bookmark' type='solid' color='#ffffff' class="save-user-solid"></box-icon> --> 
+            <box-icon name='bookmark'color='#ffffff' class="save-user"></box-icon> 
+            <box-icon name='bookmark' type='solid' color='#ffffff' class="save-user-solid"></box-icon> 
             </button>
         </div>
     </div>
@@ -114,6 +172,10 @@ const moreCardsRendering = () => {
     finalmessage.style.display = 'flex'
    }
 }
+
+///==================================
+///Funciones de renderizado de categorias
+///==================================
 
 //Filtrado
 const changeFilter = (btn) => {
@@ -164,17 +226,34 @@ const renderProductsInsideCart = (cartProduct) => {
     `;
 }
 
-const renderInCart = () => {
-    const renderCartElement = document.querySelector('.render-cart');
+const renderInCart = () => { 
     if (!cart.length) {
-        noHayProductos.classList.remove('hidden');
-        cartmenu.style.display = 'none'; 
+        hiddenObjects();
     } else {
+        showObjects();
+    }
+    renderCart.innerHTML = cart.map(renderProductsInsideCart).join('');
+    showTotalCart();
+    updateCartButtons();
+}
+
+//Elementos del cart
+const hiddenObjects = () => {
+    noHayProductos.classList.remove('hidden')
+    cartmenu.style.display = 'none';
+    buttonBuy.style.display = 'none'
+    buttonEmpty.style.display = 'none'
+    totalshop.style.display = 'none' 
+    tusProductos.style.display = 'none'
+}
+
+const showObjects = () => {
         noHayProductos.classList.add('hidden');
         cartmenu.style.display = 'flex';
-    }
-    renderCartElement.innerHTML = cart.map(renderProductsInsideCart).join('');
-    showTotalCart();
+        buttonBuy.style.display = 'block'
+        buttonEmpty.style.display = 'block'
+        totalshop.style.display = 'block' 
+        tusProductos.style.display = 'block'
 }
 
 // Funciones del carrito
@@ -190,7 +269,6 @@ const cartFunctions = ({ target }) => {
     }
     saveCartInLocalStorage();
     renderInCart();
-    
 }
 
 // Función para agregar unidad en el carrito
@@ -267,9 +345,22 @@ const showTotalCart = () => {
     }
 }
 
+//Suma y resta del carrito
 const getCartTotal = () => {
     if (!cart) return 0;
     return cart.reduce((acc, cur) => acc + Number.parseInt(cur.precio) * cur.quantity, 0);
+}
+
+//Gracias por su compra
+const fullCart = () => {
+    alert('Muchas gracias por su compra!🎉')
+}
+
+//Vaciado de carrito
+const emptyListCart = () => {
+    cart = []
+    alert ('El carrito se ha vaciado')
+    updateCartState();
 }
 
 // Llamar actualización del carrito al inicio
@@ -279,11 +370,20 @@ const updateCartState = () => {
     renderInCart();
 }
 
+//Actualiza solo los botones
+const updateCartButtons = () => {
+    saveCartInLocalStorage();
+    showTotalCart();
+}
+
 ///==================================
 ///Funciones del INIT
 ///==================================
 
 const init = () => {
+    ///hero
+    document.addEventListener('DOMContentLoaded',heroChange())
+
     ///checkboxes
     window.addEventListener('scroll', CheckboxesReset);
 
@@ -311,9 +411,15 @@ const init = () => {
 
     ///Cart
     cardsproducts.addEventListener ('click', cartFunctions)
+    buttonBuy.addEventListener('click', fullCart)
+    buttonEmpty.addEventListener ('click', emptyListCart)
     document.addEventListener('DOMContentLoaded', renderInCart())
     document.addEventListener ('DOMContentLoaded', showTotalCart())
    
 }
 
 init ();
+
+///==================================
+///====== Muchas Gracias!! ==========
+///==================================

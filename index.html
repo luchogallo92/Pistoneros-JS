@@ -65,7 +65,7 @@
                 
                 <!------- Guardados ------->
                 <div class="favorite-user">
-                    <box-icon name='heart' type='solid' color='#ffffff'></box-icon>
+                    <box-icon name='bookmarks' type='solid' color='#ffffff'></box-icon>
                     <label for="fav-checkbox">Favoritos</label>
                     <input type="checkbox" name="" id="fav-checkbox">
                 </div>
@@ -99,7 +99,7 @@
     <!------- Carrito con productos ------->   
     <section class="cart-products">
          <div class="info-cart">
-            <h3>Tus productos</h3>
+            <h3 id="your-products">Tus productos</h3>
             <div id="divider"></div>
             <span id="text-undrg">Todavia no haz seleccionado un producto</span>
         </div>
@@ -156,11 +156,14 @@
 
     <!-- Hero -->
     <section class="hero">
-        <img src="./assets/hero_images/BAN1-01.png" alt="">
+        <!-- <img src="./assets/hero_images/BAN1-01.png" alt="" id="hero-random-images"> -->
+        <div id="1"></div>
     </section>
+    
 
     <!------- Categorias ------->
-    <section class="filter-products" id="1">
+    
+    <section class="filter-products">
         <div class="filter-product-category">
             <button class="filter-btn" data-category="Todos">Todos</button>
             <img src="" alt="">
@@ -306,6 +309,7 @@
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
 
     <!-- Link JS -->
+    <script src="./assets/JS/hero.js"></script>
     <script src="./assets/JS/data.js"></script>
     <script src="./assets/JS/main.js"></script>
 </body>
