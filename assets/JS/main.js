@@ -28,6 +28,7 @@ const favbox = document.querySelector ('.favourite-box')
 ///==================================
 //Llamado a los filtros
 const filtercalling = document.querySelectorAll ('.filter-product-category')
+const filterBtn = document.querySelectorAll ('.filter-btn')
 
 ///==================================
 /// Seccion de CARDS y CARRITO
@@ -194,6 +195,15 @@ const applyFilterCategories = (e) => {
     }
     productrendering.appState.products = [0]
 }
+
+const buttonsImg = () => {
+    filterBtn.forEach(button => {
+        const imgUrl = button.getAttribute('data-image');
+        button.style.backgroundImage = `url(${imgUrl})`;
+    });
+};
+
+
 
 ///==================================
 ///Funciones del Cart
@@ -408,6 +418,7 @@ const init = () => {
     productrendering (appState.products[0])
     ShowmoreBtn.addEventListener ('click', moreCardsRendering)
     categoryContainer.addEventListener ('click', applyFilterCategories)
+    document.addEventListener ('DOMContentLoaded', buttonsImg)
 
     ///Cart
     cardsproducts.addEventListener ('click', cartFunctions)

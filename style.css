@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 
 :root {
   --main-bg-color: #0f0e17;
@@ -16,8 +18,7 @@
   color-scheme: dark;
   text-decoration: none;
   list-style: none;
-  font-family: "Poppins", sans-serif;
-  font-weight: 500;
+  font-family: "Kanit";
   scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: var(--button-primary) var(--main-bg-color);
@@ -201,6 +202,21 @@ nav {
       display: flex;
       flex-direction: row;
       gap: 5px;
+      align-items: center;
+  }
+  
+  .cart-user {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
+  }
+  
+  .favorite-user {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: center;
   }
 
   label:hover {
@@ -210,18 +226,6 @@ nav {
 
   input {
     display: none;
-  }
-  
-  .cart-user {
-      display: flex;
-      flex-direction: row;
-      gap: 5px;
-  }
-
-  .favorite-user {
-      display: flex;
-      flex-direction: row;
-      gap: 5px;
   }
 }
 
@@ -633,14 +637,19 @@ main {
   max-height: max-content;
   width: 100%;
   cursor: pointer;
-
+  
   .filter-product-category {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      height: auto;
-      width: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: auto;
+    font-family: "Kanit";
+    font-weight: 600;
+    font-stretch: extra-expanded;
+    border: 0.1px solid var(--parrafo);
+    
 
     button {
       display: flex;
@@ -651,21 +660,17 @@ main {
       width: 100%;
       border: none;
       background-color: var(--main-bg-color);
+      filter: grayscale(0.4);
     }
 
-    button:focus {
-      color: var(--button-primary);
+    p {
+      font-weight: 600;
+      text-shadow: 2px 2px 3px rgb(205, 75, 0);
     }
-
-      img {
-          opacity: 60%;
-          max-width: 100%;
-          height: 100%;
-          filter: grayscale(1);
-          background-image: url(./Assets/img/headlight.png);
-          background-size: cover;
-          background-repeat: no-repeat;
-      } 
+    
+    button:hover{
+      filter: grayscale(0.8);
+    }
   }
 }
 
@@ -807,23 +812,33 @@ main {
   width: 100%;
   height: max-content;
   background-color: var(--background-color-card);
+  
+  h4 {
+    color: var(--button-primary);
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: 400;
+  }
 
   .brands {
-      text-align: center;
-      padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 3px;
+    grid-row-gap: 3px; 
+    text-align: center;
+    background-color: var(--background-color-card);
+    border-radius: 5px;
+    
 
-      h4 {
-          color: var(--button-primary);
-          margin-bottom: 10px;
-          font-size: 25px;
-          font-weight: 400;
-      }
-      
       img {
-          border-radius: 5px;
+          padding: 10px;
+          border-radius: 2px;
           gap: 10px;
           height: 120px;
           width: 130px;
+          background-color: var(--parrafo);
+          filter: grayscale(1);
       }
   }
   
