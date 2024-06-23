@@ -363,7 +363,9 @@ const getCartTotal = () => {
 
 //Gracias por su compra
 const fullCart = () => {
+    cart = []
     alert('Muchas gracias por su compra!🎉')
+    updateCartState();
 }
 
 //Vaciado de carrito
