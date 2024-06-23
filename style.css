@@ -151,6 +151,47 @@ nav {
   }
 }
 
+.search-bar-container {
+  display: none;
+  flex-direction: row;
+  position: fixed;
+  align-items: center;
+  top: 3rem;
+  left: 25rem;
+  width: 40rem; /* Ajustado el ancho */
+  background-color: var(--background-color-card);
+  z-index: 5;
+  border-radius: 0px 0px 5px 5px;
+  border: 1px solid var(--button-primary);
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  .info-search-bar {
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+    padding: 10px;
+    width: 100%;
+  }
+
+  .search-text {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    padding: 10px;
+    border-bottom: 0.5px solid var(--button-primary);
+
+    p {
+      color: var(--button-primary);
+      margin-right: 5px;
+    }
+    
+    span {
+      color: var(--parrafo);
+      margin-right: 5px;
+    }
+  }
+}
 
 /* ------------User-Container------------ */
 .user-container {

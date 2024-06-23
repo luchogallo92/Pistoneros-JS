@@ -24,6 +24,15 @@ const favbutton = document.getElementById ('fav-checkbox')
 const favbox = document.querySelector ('.favourite-box')
 
 ///==================================
+///seccion de Search bar
+///==================================
+
+const searchBarInput = document.getElementById ('search-filter')
+const searchBarContainer = document.querySelector ('.search-bar-container')
+const infoSearchBar = document.querySelector ('.info-search-bar')
+
+
+///==================================
 /// seccion de FILTROS
 ///==================================
 //Llamado a los filtros
@@ -124,10 +133,51 @@ const updateDisplay = (checkbox) => {
     }
 };
 
+///========================================
+///Funciones de renderizado del Search bar
+///========================================
+
+const filterSearchBar = () => {
+    const searchBar = searchBarInput.value.toLowerCase().trim();
+    let resultsSearch = [];
+    
+    if (!searchBar.length) {
+        searchBarContainer.style.display = 'none';
+    } else if (searchBar.length) {
+        searchBarContainer.style.display = 'flex';
+  
+  
+      resultsSearch = products_data.filter(producto =>
+        producto.producto.toLowerCase().includes(searchBar)
+      );
+
+      if (resultsSearch.length === 0) {
+        infoSearchBar.innerHTML = 'No se encuentra el producto';
+      } else {
+        infoSearchBar.innerHTML = '';
+        mostrarResultados(resultsSearch);
+      }
+    }
+  
+    return resultsSearch;
+  };
+
+const renderingResults = (result) => {
+    const {marca,producto} = result
+        return `
+            <div class="search-text">
+                <p>${marca}</p><span>${producto}</span>
+            </div>
+            `
+        }
+
+ const mostrarResultados = (resultsSearch) => {
+    infoSearchBar.innerHTML = resultsSearch.map(renderingResults).join('')
+  };
+
 ///==================================
 ///Funciones de renderizado de cards
 ///==================================
-
 
 //Creator template
 const templatecreator = (product) => {
@@ -238,9 +288,9 @@ const renderProductsInsideCart = (cartProduct) => {
 
 const renderInCart = () => { 
     if (!cart.length) {
-        hiddenObjects();
+        hiddenObjectsCart();
     } else {
-        showObjects();
+        showObjectsCart();
     }
     renderCart.innerHTML = cart.map(renderProductsInsideCart).join('');
     showTotalCart();
@@ -248,7 +298,7 @@ const renderInCart = () => {
 }
 
 //Elementos del cart
-const hiddenObjects = () => {
+const hiddenObjectsCart = () => {
     noHayProductos.classList.remove('hidden')
     cartmenu.style.display = 'none';
     buttonBuy.style.display = 'none'
@@ -257,7 +307,7 @@ const hiddenObjects = () => {
     tusProductos.style.display = 'none'
 }
 
-const showObjects = () => {
+const showObjectsCart = () => {
         noHayProductos.classList.add('hidden');
         cartmenu.style.display = 'flex';
         buttonBuy.style.display = 'block'
@@ -415,6 +465,9 @@ const init = () => {
         CheckboxesReset(favbutton);
         updateDisplay(favbutton);
     });
+
+    ///Search bar
+    searchBarInput.addEventListener ('input',filterSearchBar)
     
     ///Categorias
     productrendering (appState.products[0])
