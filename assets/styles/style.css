@@ -131,8 +131,6 @@ nav {
     justify-content: center;
     height: 2rem;
     width: 2rem;
-    border-radius: 5px 0px 0px 5px;
-    border: 1px solid var(--button-primary);
   }
 
   input {
@@ -140,7 +138,7 @@ nav {
     border: 1px solid var(--button-primary);
     height: 2rem;
     width: 38rem;
-    border-radius: 0px 5px 5px 0px;
+    border-radius: 5px;
     font-weight: 300;
     padding: 10px;
   }
@@ -157,7 +155,7 @@ nav {
   position: fixed;
   align-items: center;
   top: 3rem;
-  left: 25rem;
+  left: 26.3rem;
   width: 40rem; /* Ajustado el ancho */
   background-color: var(--background-color-card);
   z-index: 5;
@@ -179,7 +177,10 @@ nav {
     flex-direction: row;
     align-items: left;
     padding: 10px;
-    border-bottom: 0.5px solid var(--button-primary);
+    
+    .searchSelection{
+      display: flex;
+      flex-direction: row;
 
     p {
       color: var(--button-primary);
@@ -190,6 +191,13 @@ nav {
       color: var(--parrafo);
       margin-right: 5px;
     }
+    }
+  }
+
+  .searchSelection:hover {
+    transition: 0.5s ease-in-out;
+    border-bottom: 0.5px solid var(--button-primary);
+    cursor: pointer;
   }
 }
 
@@ -666,9 +674,10 @@ main {
       width: 100%;
       border: none;
       background-color: var(--main-bg-color);
-      filter: grayscale(0.4);
+      filter: grayscale(1);
       background-repeat: no-repeat;
       background-size: cover;
+      transition: 0.5s ease-in-out;
     }
 
     p {
@@ -677,7 +686,7 @@ main {
     }
     
     button:hover{
-      filter: grayscale(0.8);
+      filter: grayscale(0.6);
     }
   }
 }
@@ -771,7 +780,7 @@ main {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 15px;
+      gap: 10px;
       border-radius: 5px;
       height: 2rem;
       width: 12rem;
@@ -806,6 +815,7 @@ main {
 }
 
 .card-container:hover {
+  transition: 0.5s ease-in-out;
   border: 2px solid var(--button-secondary);
 }
 

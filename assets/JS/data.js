@@ -4,7 +4,7 @@ const products_data =
         id: 1,
         marca: "Volkswagen",
         producto: "Block de Motor",
-        precio: 568722,
+        precio: 4358,
         categoria: "Mecanica",
         cardimg: "./assets/products/motorblock.jpg"
     },
@@ -12,7 +12,7 @@ const products_data =
         id: 2,
         marca: "Volkswagen",
         producto: "Leva de motor",
-        precio: 432844,
+        precio: 2275,
         categoria: "Mecanica",
         cardimg: "./assets/products/levas.jpg"
     },
@@ -20,7 +20,7 @@ const products_data =
         id: 3,
         marca: "Volkswagen",
         producto: "Valvulas",
-        precio: 35688,
+        precio: 1793,
         categoria: "Mecanica",
         cardimg: "./assets/products/valvulas.jpg"
     },
@@ -28,7 +28,7 @@ const products_data =
         id: 4,
         marca: "Volkswagen",
         producto: "Piston de cilindro",
-        precio: 350905,
+        precio: 1694,
         categoria: "Mecanica",
         cardimg: "./assets/products/piston.jpg"
     },
@@ -36,7 +36,7 @@ const products_data =
         id: 5,
         marca: "Volkswagen",
         producto: "Juego de juntas",
-        precio: 116012,
+        precio: 673,
         categoria: "Mecanica",
         cardimg: "./assets/products/juntas.jpg"
     },
@@ -44,7 +44,7 @@ const products_data =
         id: 6,
         marca: "Volkswagen",
         producto: "Correa de distribución",
-        precio: 25689,
+        precio: 516,
         categoria: "Mecanica",
         cardimg: "./assets/products/correa.jpg"
     },
@@ -52,15 +52,31 @@ const products_data =
         id: 7,
         marca: "Volkswagen",
         producto: "Alternador",
-        precio: 498566,
+        precio: 1025,
         categoria: "Electronica",
         cardimg: "./assets/products/alternador.jpg"
     },
     {
         id: 8,
-        marca: "Volkswagen",
+        marca: "Moura",
         producto: "Bateria",
-        precio: 154630,
+        precio: 392,
+        categoria: "Electronica",
+        cardimg: "./assets/products/bateria.jpg"
+    },
+    {
+        id: 8,
+        marca: "Bosch",
+        producto: "Bateria",
+        precio: 547,
+        categoria: "Electronica",
+        cardimg: "./assets/products/bateria.jpg"
+    },
+    {
+        id: 8,
+        marca: "Willard",
+        producto: "Bateria",
+        precio: 261,
         categoria: "Electronica",
         cardimg: "./assets/products/bateria.jpg"
     },
@@ -68,7 +84,7 @@ const products_data =
         id: 9,
         marca: "Volkswagen",
         producto: "Fusilera",
-        precio: 236780,
+        precio: 404,
         categoria: "Electronica",
         cardimg: "./assets/products/fusilera.jpg"
     },
@@ -76,7 +92,7 @@ const products_data =
         id: 10,
         marca: "Blaupunkt",
         producto: "Combo Stereo con Parlantes",
-        precio: 146200,
+        precio: 3643,
         categoria: "Audio",
         cardimg: "./assets/products/Blaupunkt+stereo.jpg"
     },
@@ -84,7 +100,7 @@ const products_data =
         id: 11,
         marca: "Blaupunkt",
         producto: "Stereo",
-        precio: 82350,
+        precio: 1269,
         categoria: "Audio",
         cardimg: "./assets/products/stereo1.jpg"
     },
@@ -92,7 +108,7 @@ const products_data =
         id: 12,
         marca: "Blaupunkt",
         producto: "Par de Parlantes",
-        precio: 67320,
+        precio: 1865,
         categoria: "Audio",
         cardimg: "./assets/products/parlantes1.jpg"
     },
@@ -100,9 +116,73 @@ const products_data =
         id: 13,
         marca: "Mercury",
         producto: "Par de Parlantes",
-        precio: 26980,
+        precio: 1265,
         categoria: "Audio",
         cardimg: "./assets/products/parlantes2.jpg"
+    },
+    {
+        id: 14,
+        marca: "Renault",
+        producto: "Block de Motor",
+        precio: 4358,
+        categoria: "Mecanica",
+        cardimg: "./assets/products/motorblock.jpg"
+    },
+    {
+        id: 15,
+        marca: "Renault",
+        producto: "Leva de motor",
+        precio: 2275,
+        categoria: "Mecanica",
+        cardimg: "./assets/products/levas.jpg"
+    },
+    {
+        id: 16,
+        marca: "Renault",
+        producto: "Valvulas",
+        precio: 1793,
+        categoria: "Mecanica",
+        cardimg: "./assets/products/valvulas.jpg"
+    },
+    {
+        id: 17,
+        marca: "Renault",
+        producto: "Piston de cilindro",
+        precio: 1694,
+        categoria: "Mecanica",
+        cardimg: "./assets/products/piston.jpg"
+    },
+    {
+        id: 18,
+        marca: "Renault",
+        producto: "Juego de juntas",
+        precio: 673,
+        categoria: "Mecanica",
+        cardimg: "./assets/products/juntas.jpg"
+    },
+    {
+        id: 19,
+        marca: "Renault",
+        producto: "Correa de distribución",
+        precio: 516,
+        categoria: "Mecanica",
+        cardimg: "./assets/products/correa.jpg"
+    },
+    {
+        id: 20,
+        marca: "Renault",
+        producto: "Alternador",
+        precio: 1025,
+        categoria: "Electronica",
+        cardimg: "./assets/products/alternador.jpg"
+    },
+    {
+        id: 21,
+        marca: "Renault",
+        producto: "Fusilera",
+        precio: 404,
+        categoria: "Electronica",
+        cardimg: "./assets/products/fusilera.jpg"
     },
 ]
 

@@ -20,8 +20,8 @@ const cartcheckbox = document.getElementById ('cart-checkbox')
 const cartmenu = document.querySelector ('.cart-products')
 
 //Favourites
-const favbutton = document.getElementById ('fav-checkbox')
-const favbox = document.querySelector ('.favourite-box')
+// const favbutton = document.getElementById ('fav-checkbox')
+// const favbox = document.querySelector ('.favourite-box')
 
 ///==================================
 ///seccion de Search bar
@@ -107,7 +107,7 @@ const heroChange = () => {
 ///==================================
 
 const CheckboxesReset = (currentCheckbox) => {
-    const checkboxes = [menunav, user, cartcheckbox, favbutton];
+    const checkboxes = [menunav, user, cartcheckbox];
     checkboxes.forEach(checkbox => {
         if (checkbox !== currentCheckbox) {
             checkbox.checked = false;
@@ -127,9 +127,9 @@ const updateDisplay = (checkbox) => {
         case cartcheckbox:
             cartmenu.style.display = checkbox.checked ? 'flex' : 'none';
             break;
-        case favbutton:
-            favbox.style.display = checkbox.checked ? 'flex' : 'none';
-            break;
+        // case favbutton:
+        //     favbox.style.display = checkbox.checked ? 'flex' : 'none';
+        //     break;
     }
 };
 
@@ -166,7 +166,7 @@ const renderingResults = (result) => {
     const {marca,producto} = result
         return `
             <div class="search-text">
-                <p>${marca}</p><span>${producto}</span>
+               <a class="searchSelection"><p>${marca}</p><span>${producto}</span></a>
             </div>
             `
         }
@@ -196,9 +196,7 @@ const templatecreator = (product) => {
             data-marca="${marca}"
             data-producto="${producto}"
             data-precio="${precio}"
-            data-img="${cardimg}">Agregar al carrito
-            <box-icon name='bookmark'color='#ffffff' class="save-user"></box-icon> 
-            <box-icon name='bookmark' type='solid' color='#ffffff' class="save-user-solid"></box-icon> 
+            data-img="${cardimg}">Agregar al carrito 
             </button>
         </div>
     </div>
@@ -366,7 +364,6 @@ const createProductData = (dataset) => {
     };
 }
 
-// Event listener para manejar incremento y decremento de cantidades
 document.addEventListener('click', (event) => {
     const { target } = event;
     if (target.id === 'item-handler-plus' || target.id === 'item-handler-minus') {
@@ -407,14 +404,18 @@ const showTotalCart = () => {
 
 //Suma y resta del carrito
 const getCartTotal = () => {
-    if (!cart) return 0;
-    return cart.reduce((acc, cur) => acc + Number.parseInt(cur.precio) * cur.quantity, 0);
+    if (!cart || cart.length === 0) return 0;
+    return cart.reduce((acc, cur) => acc + Number.parseFloat(cur.precio) * cur.quantity, 0);
 }
 
-//Gracias por su compra
+// Gracias por su compra
 const fullCart = () => {
-    cart = []
-    alert('Muchas gracias por su compra!🎉')
+    const total = getCartTotal();
+    cart = [];
+    alert('¡Muchas gracias por su compra! 🎉');
+    if (total > 10000) {
+        alert('¡Te has ganado el envío gratis!');
+    }
     updateCartState();
 }
 
@@ -461,10 +462,10 @@ const init = () => {
         CheckboxesReset(cartcheckbox);
         updateDisplay(cartcheckbox);
     });
-    favbutton.addEventListener('change', () => {
-        CheckboxesReset(favbutton);
-        updateDisplay(favbutton);
-    });
+    // favbutton.addEventListener('change', () => {
+    //     CheckboxesReset(favbutton);
+    //     updateDisplay(favbutton);
+    // });
 
     ///Search bar
     searchBarInput.addEventListener ('input',filterSearchBar)

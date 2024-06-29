@@ -1,0 +1,61 @@
+
+@media (max-width: 1280px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    .products {
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 25rem;
+        width: max-content;
+        gap: 20px;
+        padding-bottom: 20px;
+        overflow-x: hidden;
+        margin-top: 20px;
+    }
+}
+
+/* -----1366x768----- */
+@media (max-width: 1366px) {
+
+    body {
+        overflow-x: hidden;
+    }
+
+    .products {
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 25rem;
+        width: max-content;
+        gap: 20px;
+        padding-bottom: 20px;
+        overflow-x: hidden;
+        margin-top: 20px;
+    }
+}
+
+
+/* -----Tablet----- */
+@media (max-width: 992px) {
+
+    body {
+        overflow-x: hidden;
+    }
+    
+
+    .products {
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: 25rem;
+        width: max-content;
+        gap: 20px;
+        padding-bottom: 20px;
+        overflow-x: hidden;
+        margin-top: 20px;
+    }
+}
+
