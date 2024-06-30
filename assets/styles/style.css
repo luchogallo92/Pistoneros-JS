@@ -741,7 +741,6 @@ main {
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 23rem;
   width: max-content;
   height: auto;
   gap: 20px;
@@ -782,12 +781,13 @@ main {
       gap: 5px;
       color: var(--texto);
   
-    h4 {
+      h4 {
       font-weight: 400;
-    }
-    span {
+      }
+      span {
+      color: var(--parrafo);
       font-weight: 300;
-    }
+      }
 
     }
 

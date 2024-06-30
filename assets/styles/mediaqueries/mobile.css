@@ -10,23 +10,31 @@
         max-height: max-content;
         overflow-x: hidden;
         z-index: 10;
+
+        i {
+            display: none;
+        }
     }
 
     .hero {
         display: flex;
         width: 100%;
-        height: 22rem;
+        height: 17rem;
     }
 
     .menu {
+        i {
+            display: none;
+        }
         label {
             font-size: 12px;
         }
     }
 
     .search-bar {
-        display: flex;
-        width: 10%;
+        input{
+            width: 85%;
+        }
 
         i{
             display: none;
@@ -76,86 +84,105 @@
         }
     }
 
-    body {
+body {
         overflow-x: hidden;
-    }
+}
 
-   .filter-products{
-
-        .filter-product-category {
-            height: 100%;
-            width: 100%;
-
-            overflow-x: hidden;
-            h2 {
-                font-size: 20px;
-            } 
-        }
-    }
+/* Filtros */
+.filter-products{
+    height: 10rem;
+    grid-auto-rows: 5rem;
     
-    /* Cards */
-    .products_container {
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: 1fr;
-        grid-column-gap: 0px;
-        grid-row-gap: 0px;
-        width: max-content;
-        gap: 5px;
-        overflow-x: hidden;
-        margin-top: 10px;
+        .filter-product-category {
+            height: 5rem;
+            width: 100%;
+            overflow-x: hidden;
+            border: 0.1px solid var(--parrafo);
+
+            button {
+                border-radius: 0px;
+
+                p {
+                    font-size: 15px;
+                } 
+            }
+        }
+ }
+    
+/* Cards */
+.products_container {
+    margin: 0 auto;
+    display: grid;
+    height: max-content;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    width: max-content;
+    gap: 5px;
+    overflow-x: hidden;
+  
 
     .card-container {
-            display: flex;
-            flex-direction: column;
-            height: 22rem;
-            width: 17rem;
-            gap: 12px;
-            border-radius: 5px; 
-            padding: 15px;
-            overflow-x: hidden;
-            overflow-y: hidden;
-        
-            img {
-                border-radius: 2px;
-                width: 100%;
-                height: 100%;
-            }
-        
-            .info-card {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                gap: 5px;
-            }
-        
-            #add-to-cart-from-card {
-                border-radius: 5px;
-                height: 2rem;
-                width: 10rem;
-                border-style: none;
-                border: 1px solid var(--button-primary);
-            }
-        
-            #add-to-cart-from-card:hover {
-                transition: 0.5s ease-in;
-                background-color: var(--button-primary);
-                border: none;
-            }
-        
-            #add-to-cart-from-card:focus {
-                transition: 0.5s ease-in;
-                background-color: var(--button-secondary);
-                border: none;
-            }
+    display: flex;
+    flex-direction: column;
+    height: 18rem;
+    width: 13rem;
+    gap: 12px;
+    border-radius: 5px; 
+    padding: 15px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    margin: 0;
+
+    .image-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
     }
+    
+    .info-card {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+        h4 {
+            font-size: 15px;
+            font-weight: 400;
+        }
+        span {
+        color: var(--parrafo);
+        font-size: 12px;
+        font-weight: 300;
+        }
+        }
     }
+}
+
+/* Formulario de contacto */
+.form-contact {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: max-content;
+    gap: 10px;
+
+    .form-box {
+        position: relative;
+        align-items: center;
+        width: 80%;
+        
+        #send-form {
+            width: 80%;
+        }
+    
+    }
+    
 
     .about-us {
         h4 {
             font-size: 20px;
+            text-align: center;
         }
     }
 
@@ -163,7 +190,7 @@
         width: auto;
         justify-content: center;
         align-items: center;
-        padding: 20px;
+        padding: 10px;
         
         #img-brand {
             height: 60px;
@@ -171,36 +198,27 @@
         }
     }
 
-    .form-contact {
-        display: flex;
-        flex-direction: column; 
-        align-items: center;
-        justify-content: center;
+    .callcenter {
+        width: 100%;
+        flex-direction: column;
+        text-wrap: balance;
         padding: 20px;
-        height: max-content;
 
-        .form-box {
+        h4 {
+            text-align: center;
+        }
+        
+        .callcenter-info {
             display: flex;
-            flex-direction: column;
-            position: relative;
-            width: 80%;
+            gap: 10px !important; 
+            width: 100%;
+            height: 10%;
         }
     }
+}
 
-    .callcenter {
-            flex-direction: column;
-            text-wrap: balance;
-            padding: 20px;
-
-            .callcenter-info {
-                display: flex;
-                gap: 10px !important; 
-                width: 2rem;
-                height: 10%;
-            }
-    }
-
-    .pre-footer {
+/* Pre footer */
+.pre-footer {
         margin: 0 auto;
         display: flex;
         flex-direction: row;
@@ -250,9 +268,9 @@
                 font-weight: 400;
             }
         }
-    }
+}
 
-    footer {
+footer {
         background-color: var(--parrafo);
 
         .links-footer ul,li,a {
@@ -270,5 +288,5 @@
             background-color: var(--parrafo);
             justify-content: center;
         }
-    }
+}
 }

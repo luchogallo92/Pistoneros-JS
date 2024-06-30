@@ -185,7 +185,7 @@ const templatecreator = (product) => {
             <div class="image-card">
                 <img src= ${cardimg} alt=${producto}>
             </div>
-            <div class="info-card">
+        <div class="info-card">
                 <h4>${marca}</h4>
                 <span>${producto}</span>
                 <span>Precio: $${precio}</span>
