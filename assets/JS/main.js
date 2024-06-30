@@ -100,8 +100,6 @@ const heroChange = () => {
     setTimeout(heroChange, hero_images.length * intervalHero);
 }
 
-
-
 ///==================================
 /// Funcion para reiniciar los checkboxes
 ///==================================
@@ -243,14 +241,6 @@ const applyFilterCategories = (e) => {
     }
     productrendering.appState.products = [0]
 }
-
-const buttonsImg = () => {
-    filterBtn.forEach(button => {
-        const imgUrl = button.getAttribute('data-image');
-        button.style.backgroundImage = `url(${imgUrl})`;
-    });
-};
-
 
 
 ///==================================
@@ -421,8 +411,10 @@ const fullCart = () => {
 
 //Vaciado de carrito
 const emptyListCart = () => {
-    cart = []
-    alert ('El carrito se ha vaciado')
+    if (window.confirm ('Desea vaciar el carrito?')) {
+        alert ('El carrito se ha vaciado!')
+        cart = []
+    }
     updateCartState();
 }
 
@@ -474,7 +466,6 @@ const init = () => {
     productrendering (appState.products[0])
     ShowmoreBtn.addEventListener ('click', moreCardsRendering)
     categoryContainer.addEventListener ('click', applyFilterCategories)
-    document.addEventListener ('DOMContentLoaded', buttonsImg)
 
     ///Cart
     cardsproducts.addEventListener ('click', cartFunctions)

@@ -28,7 +28,7 @@
 /* -------------- HEADER -------------- */
 header {
   display:flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   background-color: var(--main-bg-color);
@@ -657,39 +657,54 @@ main {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: auto;
-    width: auto;
+    height: 98%;
+    width: 99%;
     font-family: "Kanit";
     font-weight: 600;
     font-stretch: extra-expanded;
-    border: 0.1px solid var(--parrafo);
     
 
     button {
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 20px;
+      font-size: 25px;
       height: 100%;
       width: 100%;
       border: none;
-      background-color: var(--main-bg-color);
-      filter: grayscale(1);
-      background-repeat: no-repeat;
-      background-size: cover;
-      transition: 0.5s ease-in-out;
+      border-radius: 5px;
+      transition: 1s all ease-in;
     }
 
     p {
       font-weight: 600;
-      text-shadow: 2px 2px 3px rgb(205, 75, 0);
+      text-shadow: 2px 2px 3px rgb(52, 52, 52);
     }
     
     button:hover{
-      filter: grayscale(0.6);
+      background-image: linear-gradient(
+        135deg,
+        hsl(32deg 100% 51%) 0%,
+        hsl(29deg 98% 52%) 19%,
+        hsl(27deg 97% 53%) 27%,
+        hsl(25deg 97% 54%) 34%,
+        hsl(23deg 95% 55%) 41%,
+        hsl(20deg 94% 56%) 47%,
+        hsl(18deg 93% 57%) 53%,
+        hsl(16deg 92% 58%) 59%,
+        hsl(13deg 90% 59%) 66%,
+        hsl(11deg 89% 60%) 73%,
+        hsl(9deg 88% 61%) 81%,
+        hsl(7deg 86% 62%) 100%
+      );
     }
+    button:focus {
+      background-color: var(--button-secondary);
+    }
+    
   }
 }
+
 
 /* -------------- UNDER FILTER SLIDER -------------- */
 
@@ -827,8 +842,12 @@ main {
   width: 100%;
   justify-content: center;
 
+  p{
+    font-size: 16px;
+  }
+
   #show-more-bttn {
-    width: 8rem;
+    width: 25%;
     height: 2.5rem;
     border: none;
     border-radius: 5px 5px 0px 0px;
@@ -837,7 +856,7 @@ main {
 
   #show-more-bttn:hover {
     cursor: pointer;
-    transition: 0.2s ease-in;
+    transition: 0.2s all ease-in;
     background-color: #f25f4c;
   }
 
@@ -850,47 +869,8 @@ main {
   margin-bottom: 10px;
   font-size: 20px;
 }
-/*------------ About us ------------ */
 
-.about-us {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: max-content;
-  background-color: var(--background-color-card);
-  
-  h4 {
-    color: var(--button-primary);
-    margin-bottom: 10px;
-    font-size: 25px;
-    font-weight: 400;
-  }
-
-  .brands {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 3px;
-    grid-row-gap: 3px; 
-    text-align: center;
-    background-color: var(--background-color-card);
-    border-radius: 5px;
-    
-
-      img {
-          padding: 10px;
-          border-radius: 2px;
-          gap: 10px;
-          height: 120px;
-          width: 130px;
-          background-color: var(--parrafo);
-          filter: grayscale(1);
-      }
-  }
-  
-
+/*------------ About Us Section ------------ */
 .form-contact {
     display: flex;
     flex-direction: row;
@@ -963,7 +943,46 @@ main {
       background-color: #f25f4c;
     }
 
-    .callcenter {
+  /*------------ Brands ------------ */
+
+  .about-us {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: max-content;
+  background-color: var(--background-color-card);
+  
+  h4 {
+    color: var(--button-primary);
+    margin-bottom: 10px;
+    font-size: 25px;
+    font-weight: 400;
+  }
+
+  .brands {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 3px;
+    grid-row-gap: 3px; 
+    text-align: center;
+    background-color: var(--background-color-card);
+    border-radius: 5px;
+
+      img {
+          padding: 10px;
+          border-radius: 2px;
+          gap: 10px;
+          height: 120px;
+          width: 130px;
+          filter: grayscale(1);
+      }
+  }
+  }
+
+  .callcenter {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -987,8 +1006,8 @@ main {
         }
       }
     }
-  }
 }
+
 
 
 .pre-footer {
