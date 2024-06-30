@@ -155,8 +155,8 @@ nav {
   position: fixed;
   align-items: center;
   top: 3rem;
-  left: 26.3rem;
-  width: 40rem; /* Ajustado el ancho */
+  left: 21rem;
+  width: 38rem;
   background-color: var(--background-color-card);
   z-index: 5;
   border-radius: 0px 0px 5px 5px;
@@ -646,7 +646,7 @@ main {
 .filter-products {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-auto-rows: 9rem;
+  grid-auto-rows: 5rem;
   height: 100%;
   max-height: max-content;
   width: 100%;
@@ -657,7 +657,7 @@ main {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 98%;
+    height: 97%;
     width: 99%;
     font-family: "Kanit";
     font-weight: 600;
@@ -668,7 +668,7 @@ main {
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 25px;
+      font-size: 20px;
       height: 100%;
       width: 100%;
       border: none;
@@ -953,6 +953,7 @@ main {
   width: 100%;
   height: max-content;
   background-color: var(--background-color-card);
+  overflow-x: hidden;
   
   h4 {
     color: var(--button-primary);
