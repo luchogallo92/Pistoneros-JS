@@ -135,43 +135,51 @@ const updateDisplay = (checkbox) => {
 ///Funciones de renderizado del Search bar
 ///========================================
 
+let flagSearch = false;
+
 const filterSearchBar = () => {
     const searchBar = searchBarInput.value.toLowerCase().trim();
-    let resultsSearch = [];
-    
-    if (!searchBar.length) {
-        searchBarContainer.style.display = 'none';
-    } else if (searchBar.length) {
-        searchBarContainer.style.display = 'flex';
-  
-  
-      resultsSearch = products_data.filter(producto =>
-        producto.producto.toLowerCase().includes(searchBar)
-      );
 
-      if (resultsSearch.length === 0) {
-        infoSearchBar.innerHTML = 'No se encuentra el producto';
-      } else {
+    if (!searchBar.length) {
+        console.log('entro')
+        searchBarContainer.style.display = 'none';
         infoSearchBar.innerHTML = '';
-        mostrarResultados(resultsSearch);
-      }
+        flagSearch && (cardsproducts.innerHTML = products_data.map(templatecreator).join(''))
+    } else {
+        searchBarContainer.style.display = 'flex';
+
+        const resultsSearch = products_data.filter(producto =>
+            producto.producto.toLowerCase().includes(searchBar)
+        );
+
+        if (!resultsSearch.length === 0) {
+            infoSearchBar.innerHTML = 'No se encuentra el producto';
+        } else {
+            infoSearchBar.innerHTML = '';
+            mostrarResultados(resultsSearch);
+            flagSearch = true;
+        }
     }
-  
-    return resultsSearch;
-  };
+};
 
 const renderingResults = (result) => {
-    const {marca,producto} = result
-        return `
-            <div class="search-text">
-               <a class="searchSelection"><p>${marca}</p><span>${producto}</span></a>
-            </div>
-            `
-        }
+    const { id, marca, producto } = result;
+    return `
+        <div class="search-text">
+            <a onclick="activeSelection('${id}')" class="searchSelection"><p>${marca}</p><span>${producto}</span></a>
+        </div>
+    `;
+};
 
- const mostrarResultados = (resultsSearch) => {
-    infoSearchBar.innerHTML = resultsSearch.map(renderingResults).join('')
-  };
+const mostrarResultados = (resultsSearch) => {
+    infoSearchBar.innerHTML = resultsSearch.map(renderingResults).join('');
+};
+
+const activeSelection = (id) => {
+    cardsproducts.innerHTML ='';
+    const selectedProduct = products_data.filter(product => product.id === Number(id));
+    productrendering (selectedProduct)
+};
 
 ///==================================
 ///Funciones de renderizado de cards
@@ -181,7 +189,7 @@ const renderingResults = (result) => {
 const templatecreator = (product) => {
     const { id, marca, producto, precio, cardimg } = product;
     return `
-    <div class="card-container" ${id}>
+    <div class="card-container" id="${id}">
             <div class="image-card">
                 <img src= ${cardimg} alt=${producto}>
             </div>
@@ -231,17 +239,15 @@ const changeFilter = (btn) => {
 
 //Funcion de categorias
 const applyFilterCategories = (e) => {
-    changeFilter(e.target)
+    changeFilter(e.target);
     cardsproducts.innerHTML ='';
-    if (appState.activeFilter) {
-        const filterSelected = products_data.filter (product => product.categoria === appState.activeFilter)
-        productrendering (filterSelected)
-        appState.currentProductsIndex = 0;
-        return
-    }
-    productrendering.appState.products = [0]
+    const products = (appState.activeFilter !== "Todos") 
+    ? products_data.filter (product => product.categoria === appState.activeFilter)
+    : products_data.map(p => p);
+    productrendering (products);
+    appState.currentProductsIndex = 0;
+    return;
 }
-
 
 ///==================================
 ///Funciones del Cart

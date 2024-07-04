@@ -45,7 +45,8 @@
         margin: 0 auto;
         width: 100%;
         position: fixed;
-        top: 0px;
+        height: 10rem;
+        top: 3rem;
         left: 0px;
     }
 
@@ -101,10 +102,11 @@ body {
 
             button {
                 border-radius: 0px;
+                font-size: 12px;
 
                 p {
-                    font-size: 15px;
-                } 
+                    font-size: 12px;
+                  } 
             }
         }
  }
