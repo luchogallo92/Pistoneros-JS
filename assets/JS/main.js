@@ -236,7 +236,6 @@ const moreCardsRendering = () => {
 const changeFilter = (btn) => {
     appState.activeFilter = btn.dataset.category
 }
-
 //Funcion de categorias
 const applyFilterCategories = (e) => {
     changeFilter(e.target);
