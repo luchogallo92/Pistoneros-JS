@@ -20,3 +20,39 @@ const hero_images = [
         img: "./assets/hero_images/BAN1-01.png"
     },
 ]
+
+///==================================
+/// Seccion del Hero
+///==================================
+
+const hero = document.querySelector ('.hero')
+
+///==================================
+/// Funcion para cambiar el Hero
+///==================================
+
+let intervalHero = 5000
+let imgIndex = 0
+
+const backgroundChanger = (imagen) => {
+    const { id, img } = imagen;
+    return `
+        <img src="${img}" alt="" id="${id}">
+    `;
+};
+
+const heroChange = () => {
+
+    for (let i = 0; i < hero_images.length; i++) {
+        setTimeout(() => {
+            const img = backgroundChanger(hero_images[i]);
+            hero.innerHTML = img;
+
+            setTimeout(() => {
+                hero.querySelector('img').classList.add('active');
+            }, 50);
+        }, i * intervalHero);
+    }
+
+    setTimeout(heroChange, hero_images.length * intervalHero);
+}
