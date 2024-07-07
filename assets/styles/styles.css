@@ -403,7 +403,7 @@ nav {
   top: 3rem;
   right: 0px;
   flex-direction: column;
-  height: 40rem;
+  height: 30rem;
   width: 30rem;
   z-index: 3;
   background: var(--background-color-card);
@@ -505,7 +505,8 @@ nav {
   align-items: center;
   height: 5rem;
   width: 80%;
- 
+  gap: 10px;
+  padding-bottom: 10px;
 
   button {
       border-radius: 5px;
@@ -805,7 +806,26 @@ main {
       width: 12rem;
       border-style: none;
       background-color: #ff8906;
-      border: 1px solid var(--button-primary);
+      transition: 1s ease-in;
+  }
+
+  .add-to-cart-from-card:hover{
+    
+    background-image: linear-gradient(
+        135deg,
+        hsl(32deg 100% 51%) 0%,
+        hsl(29deg 98% 52%) 19%,
+        hsl(27deg 97% 53%) 27%,
+        hsl(25deg 97% 54%) 34%,
+        hsl(23deg 95% 55%) 41%,
+        hsl(20deg 94% 56%) 47%,
+        hsl(18deg 93% 57%) 53%,
+        hsl(16deg 92% 58%) 59%,
+        hsl(13deg 90% 59%) 66%,
+        hsl(11deg 89% 60%) 73%,
+        hsl(9deg 88% 61%) 81%,
+        hsl(7deg 86% 62%) 100%
+      );
   }
 
   .add-to-cart-from-card:focus {
@@ -861,7 +881,21 @@ main {
   #show-more-bttn:hover {
     cursor: pointer;
     transition: 0.2s all ease-in;
-    background-color: #f25f4c;
+    background-image: linear-gradient(
+      135deg,
+      hsl(32deg 100% 51%) 0%,
+      hsl(29deg 98% 52%) 19%,
+      hsl(27deg 97% 53%) 27%,
+      hsl(25deg 97% 54%) 34%,
+      hsl(23deg 95% 55%) 41%,
+      hsl(20deg 94% 56%) 47%,
+      hsl(18deg 93% 57%) 53%,
+      hsl(16deg 92% 58%) 59%,
+      hsl(13deg 90% 59%) 66%,
+      hsl(11deg 89% 60%) 73%,
+      hsl(9deg 88% 61%) 81%,
+      hsl(7deg 86% 62%) 100%
+    )
   }
 
 }
