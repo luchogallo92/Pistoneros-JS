@@ -70,7 +70,7 @@ const products_data =
         producto: "Bateria",
         precio: 547,
         categoria: "Electronica",
-        cardimg: "./assets/products/bateria.jpg"
+        cardimg: "./assets/products/bateriaBosch.jpg"
     },
     {
         id: 8,
@@ -78,7 +78,7 @@ const products_data =
         producto: "Bateria",
         precio: 261,
         categoria: "Electronica",
-        cardimg: "./assets/products/bateria.jpg"
+        cardimg: "./assets/products/bateriaWillard.jpg"
     },
     {
         id: 9,
@@ -182,7 +182,143 @@ const products_data =
         producto: "Fusilera",
         precio: 404,
         categoria: "Electronica",
-        cardimg: "./assets/products/fusilera.jpg"
+        cardimg: "./assets/products/fusileraRenault.jpg"
+    },
+    {
+        id: 22,
+        marca: "Michelin",
+        producto: "Pilot Sport",
+        precio: 658,
+        categoria: "Rodados",
+        cardimg: "./assets/products/MichelinPilotSport.jpg"
+    },
+    {
+        id: 23,
+        marca: "Pirelli",
+        producto: "Cinturato",
+        precio: 730,
+        categoria: "Rodados",
+        cardimg: "./assets/products/PirelliCinturato.jpg"
+    },
+    {
+        id: 24,
+        marca: "Pirelli",
+        producto: "P-Zero",
+        precio: 698,
+        categoria: "Rodados",
+        cardimg: "./assets/products/PirelliPzero.jpg"
+    },
+    {
+        id: 25,
+        marca: "Michelin",
+        producto: "Latitude",
+        precio: 573,
+        categoria: "Rodados",
+        cardimg: "./assets/products/MichelinLatitude.jpg"
+    },
+    {
+        id: 26,
+        marca: "Llantas Advan",
+        producto: "RG-4",
+        precio: 920,
+        categoria: "Rodados",
+        cardimg: "./assets/products/Advan.jpg"
+    },
+    {
+        id: 27,
+        marca: "Llantas HRE",
+        producto: "FF",
+        precio: 1120,
+        categoria: "Rodados",
+        cardimg: "./assets/products/HREFF.jpg"
+    },
+    {
+        id: 28,
+        marca: "Llantas HRE",
+        producto: "FF-Black",
+        precio: 1230,
+        categoria: "Rodados",
+        cardimg: "./assets/products/HREFF-2.jpg"
+    },
+    {
+        id: 29,
+        marca: "Llantas MOMO",
+        producto: "Racing Copper",
+        precio: 890,
+        categoria: "Rodados",
+        cardimg: "./assets/products/MomoRacing.jpg"
+    },
+    {
+        id: 30,
+        marca: "Llantas BBS",
+        producto: "ARO",
+        precio: 950,
+        categoria: "Rodados",
+        cardimg: "./assets/products/BBSARO.jpg"
+    },
+    {
+        id: 31,
+        marca: "Llantas BBS",
+        producto: "CHR",
+        precio: 950,
+        categoria: "Rodados",
+        cardimg: "./assets/products/BBSCHR.jpg"
+    },
+    {
+        id: 32,
+        marca: "Akrapovic",
+        producto: "Carbon Simple",
+        precio: 530,
+        categoria: "Performance",
+        cardimg: "./assets/products/AkrapovicCarbonSimple.jpg"
+    },
+    {
+        id: 33,
+        marca: "Akrapovic",
+        producto: "Carbon Double",
+        precio: 875,
+        categoria: "Performance",
+        cardimg: "./assets/products/AkrapovicCarbonDouble.jpg"
+    },
+    {
+        id: 34,
+        marca: "Pomo Sparco",
+        producto: "Sport Black",
+        precio: 85,
+        categoria: "Interior",
+        cardimg: "./assets/products/PomoSparco.jpg"
+    },
+    {
+        id: 35,
+        marca: "Pomo Sparco",
+        producto: "Aluminum",
+        precio: 110,
+        categoria: "Interior",
+        cardimg: "./assets/products/PomoSparcoAL.jpg"
+    },
+    {
+        id: 36,
+        marca: "Pomo Sparco",
+        producto: "Anodized",
+        precio: 110,
+        categoria: "Interior",
+        cardimg: "./assets/products/PomoSparcoAn.jpg"
+    },
+    {
+        id: 37,
+        marca: "Volante Momo",
+        producto: "Classic",
+        precio: 560,
+        categoria: "Interior",
+        cardimg: "./assets/products/VolanteMOMOClassic.jpg"
+    },
+    {
+        id: 38,
+        marca: "Volante Momo",
+        producto: "Racing",
+        precio: 310,
+        categoria: "Interior",
+        cardimg: "./assets/products/VolanteMOMO1.jpg"
     },
 ]
 
