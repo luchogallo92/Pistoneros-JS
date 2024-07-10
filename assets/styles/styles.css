@@ -22,7 +22,6 @@
   scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: var(--button-primary) var(--main-bg-color);
-  max-width: 1360px;
 }
 
 
